@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - PASSWORD VAULT</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .update-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 35px;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: #eef7fd;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .footer-contact {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+            padding: 30px;
+        }
+
+        .email {
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Política de Privacidade</h1>
+        <p><strong>PASSWORD VAULT</strong></p>
+        <div class="update-date">Última atualização: 28/02/2026</div>
+    </header>
+
+    <p>A sua privacidade é a nossa prioridade máxima. Esta Política de Privacidade descreve como o <strong>Password Vault</strong> lida com as suas informações ao utilizar a nossa aplicação móvel.</p>
+
+    <div class="highlight-box">
+        <h2>1. Filosofia de "Zero Conhecimento" (Zero-Knowledge)</h2>
+        <p>O <strong>Password Vault</strong> foi projetado sob o princípio de que apenas o utilizador tem acesso aos seus dados.</p>
+        <ul>
+            <li><strong>Não armazenamos as suas senhas nos nossos servidores.</strong></li>
+            <li>A sua <strong>Senha Mestra</strong> nunca é enviada para nós nem para terceiros.</li>
+            <li>Os seus dados são criptografados localmente no seu dispositivo utilizando padrões de nível militar (<strong>AES-256</strong>).</li>
+        </ul>
+    </div>
+
+    <h2>2. Informações que Coletamos e Como as Utilizamos</h2>
+
+    <h3>2.1. Dados de Senhas e Cofre</h3>
+    <p>Todos os dados que insere na aplicação (logins, senhas, notas) são armazenados localmente no banco de dados criptografado do seu dispositivo. Não temos acesso a estes dados em nenhum momento.</p>
+
+    <h3>2.2. Integração com Google Drive (Sincronização)</h3>
+    <ul>
+        <li>O app solicita acesso ao seu <strong>Google Drive</strong> para criar um ficheiro de cópia de segurança privado.</li>
+        <li>Este ficheiro permanece exclusivamente na sua conta pessoal do Google e está protegido pela sua Senha Mestra.</li>
+        <li>O app acede apenas aos ficheiros criados por ele mesmo (âmbito de permissão <code>drive.appdata</code>).</li>
+    </ul>
+
+    <h3>2.3. Biometria</h3>
+    <p>O app utiliza as APIs oficiais do sistema (Android BiometricPrompt) para desbloqueio seguro. <strong>Não coletamos nem armazenamos os seus dados biométricos</strong> (impressão digital ou rosto); o sistema operacional apenas nos informa se a autenticação foi bem-sucedida.</p>
+
+    <h3>2.4. Compras e Assinaturas</h3>
+    <p>As transações de subscrição Premium são processadas pela <strong>Google Play Store</strong>. Não armazenamos detalhes de cartões de crédito ou métodos de pagamento. Recebemos apenas a confirmação técnica de que a assinatura está ativa.</p>
+
+    <hr>
+
+    <h2>3. Serviços de Terceiros e Anúncios</h2>
+    <p>Para utilizadores da versão gratuita, utilizamos o <strong>Google AdMob</strong> para exibir anúncios. Estes serviços podem coletar identificadores de publicidade (como o GAID) para fins de personalização e análise. Você pode gerir estas preferências diretamente nas definições de privacidade do seu dispositivo Android.</p>
+
+    <h2>4. Permissões Solicitadas</h2>
+    <ul>
+        <li><strong>Internet:</strong> Necessária para sincronização com Google Drive e verificação de assinatura.</li>
+        <li><strong>Biometria/Digital:</strong> Necessária para o desbloqueio seguro do cofre sem digitação manual.</li>
+    </ul>
+
+    <h2>5. Retenção e Exclusão de Dados</h2>
+    <p>Como não armazenamos os seus dados em servidores próprios, a exclusão do aplicativo ou a limpeza de dados do dispositivo resultará na remoção permanente de todos os dados locais.</p>
+
+    <h2>6. Segurança</h2>
+    <p>Empregamos medidas de segurança robustas, mas lembre-se que a segurança do seu cofre depende inteiramente da força da sua <strong>Senha Mestra</strong>.</p>
+    <p style="color: #c0392b; font-weight: bold;">Atenção: Se perder a sua Senha Mestra, não poderemos recuperar os seus dados, pois não possuímos chaves de recuperação ou "backdoors".</p>
+
+    <div class="footer-contact">
+        <h2>7. Contato</h2>
+        <p>Se tiver alguma dúvida sobre esta política ou sobre a segurança do aplicativo, entre em contacto connosco através do e-mail:</p>
+        <a href="mailto:prot3d.loja@gmail.com" class="email">prot3d.loja@gmail.com</a>
+    </div>
+</div>
+
+</body>
+</html>
