@@ -3,72 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps Developer - Prot3D</title>
+    <title>Prot3D - Cybersecurity & App Development</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter para um visual limpo e corporativo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <style>
-        body { background-color: #f4f7f6; color: #2d3436; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .hero { background: linear-gradient(135deg, #0984e3, #6c5ce7); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px; }
-        .card { border: none; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card:hover { transform: translateY(-5px); }
-        .btn-primary { background-color: #6c5ce7; border: none; }
-        .resource-link { text-decoration: none; color: #636e72; font-weight: 500; }
-        .resource-link:hover { color: #0984e3; }
+        :root {
+            --primary-dark: #07172E; /* Azul muito escuro (dos logos) */
+            --cyan-glow: #00B4D8;   /* Ciano do Password Vault */
+            --orange-accent: #F77F00; /* Laranja do Network Hawk */
+        }
+
+        body { 
+            background-color: #f4f6f9; 
+            color: #2b3440; 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        /* Seção Hero com Imagem de Fundo de Tecnologia e Overlay Escuro */
+        .hero { 
+            /* Imagem de nós de rede (cybersegurança) com gradiente escuro por cima */
+            background: linear-gradient(135deg, rgba(7, 23, 46, 0.92), rgba(2, 62, 115, 0.85)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072') center/cover no-repeat;
+            color: white; 
+            padding: 100px 0 120px; /* Mais espaço no fundo para os cartões sobreporem */
+            text-align: center; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Estilo da Logo SVG (Prot3D) */
+        .hero-logo-svg {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 24px;
+            filter: drop-shadow(0px 4px 8px rgba(0, 180, 216, 0.3));
+        }
+
+        .hero p.lead {
+            color: #a8b2c1;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container principal sobe um pouco para sobrepor o Hero */
+        .main-content {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Melhorias nos Cartões - Visual Clean/Corporativo */
+        .card { 
+            border: none; 
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            background-color: #ffffff;
+            padding-top: 30px; /* Espaço para a logo do app */
+        }
+        
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 35px rgba(0, 180, 216, 0.15);
+        }
+
+        /* Estilização das Logos dos Apps nos cartões */
+        .app-icon-container {
+            width: 80px;
+            height: 80px;
+            margin: -70px auto 20px; /* Faz a logo "sair" para fora do cartão */
+            border-radius: 20px;
+            background-color: var(--primary-dark);
+            padding: 5px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border: 4px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .app-icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+        }
+
+        /* Botões padronizados com a cor Ciano */
+        .btn-primary { 
+            background-color: var(--cyan-glow); 
+            color: #fff;
+            border: none; 
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0096b4;
+            color: #ffffff;
+            transform: scale(1.02);
+        }
+
+        /* Estilização da área do app em breve */
+        .card-dashed {
+            border: 2px dashed #cbd5e1 !important; 
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+            padding-top: 0;
+        }
+        .card-dashed:hover {
+            border-color: var(--cyan-glow) !important;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1);
+        }
+
+        /* Links de Recursos */
+        .resource-link { 
+            text-decoration: none; 
+            color: #64748b; 
+            font-weight: 600; 
+            font-size: 1rem;
+            transition: color 0.2s;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .resource-link:hover { 
+            color: var(--primary-dark); 
+            border-color: var(--cyan-glow);
+        }
+        
+        .resource-link i {
+            margin-right: 8px;
+            color: var(--cyan-glow);
+        }
     </style>
 </head>
 <body>
 
 <div class="hero">
     <div class="container">
-        <h1>Prot3D</h1>
-        <p class="lead">Desenvolvimento de aplicativos móveis seguros e inovadores.</p>
+        <!-- Logo Prot3D em SVG: Limpa, Vetorial e Profissional -->
+        <svg class="hero-logo-svg" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ícone de Escudo/Cubo (Cibersegurança + 3D) -->
+            <path d="M40 20 L70 35 L70 65 L40 80 L10 65 L10 35 Z" fill="none" stroke="#00B4D8" stroke-width="4"/>
+            <path d="M40 20 L40 50 L70 65 M40 50 L10 65" fill="none" stroke="#00B4D8" stroke-width="4"/>
+            <circle cx="40" cy="50" r="4" fill="#F77F00"/>
+            <circle cx="40" cy="20" r="4" fill="#F77F00"/>
+            <circle cx="70" cy="35" r="4" fill="#00B4D8"/>
+            <circle cx="10" cy="35" r="4" fill="#00B4D8"/>
+            
+            <!-- Texto Prot3D -->
+            <text x="95" y="65" font-family="'Inter', sans-serif" font-weight="800" font-size="48" fill="#FFFFFF" letter-spacing="2">
+                PROT<tspan fill="#00B4D8">3D</tspan>
+            </text>
+        </svg>
+
+        <p class="lead mt-2">Desenvolvimento de soluções mobile seguras, privadas e de alta performance.</p>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4">
+<div class="container main-content">
+    <div class="row justify-content-center">
+        
+        <!-- App 1: Password Vault -->
+        <div class="col-md-6 col-lg-4 mb-5">
             <div class="card h-100">
-                <div class="card-body text-center">
+                <div class="app-icon-container">
+                    <!-- Substituído pelo seu arquivo real -->
+                    <img src="logo_pass_vault.png" alt="Logo Password Vault">
+                </div>
+                <div class="card-body text-center d-flex flex-column">
                     <h5 class="card-title">Password Vault</h5>
-                    <p class="card-text">Gerenciador de senhas offline com sincronização em nuvem privada.</p>
-                    <a href="pass_vault_privacy_policy.html" class="btn btn-primary w-100">Política de Privacidade</a>
+                    <p class="card-text text-muted mb-4 mt-2">Gerenciador de senhas offline com sincronização em nuvem privada e criptografia avançada.</p>
+                    <a href="pass_vault_privacy_policy.html" class="btn btn-primary w-100 mt-auto">Política de Privacidade</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
+        <!-- App 2: Network Hawk -->
+        <div class="col-md-6 col-lg-4 mb-5">
             <div class="card h-100">
-                <div class="card-body text-center">
+                <div class="app-icon-container">
+                    <!-- Substituído pelo seu arquivo real -->
+                    <img src="network_hawk.png" alt="Logo Network Hawk">
+                </div>
+                <div class="card-body text-center d-flex flex-column">
                     <h5 class="card-title">Network Hawk</h5>
-                    <p class="card-text">High-performance real-time network diagnostics and connectivity tools.</p>
-                    <a href="nethawk_privacy.html" class="btn btn-primary w-100">Política de Privacidade</a>
+                    <p class="card-text text-muted mb-4 mt-2">Diagnósticos de rede em tempo real e ferramentas de conectividade de alta performance.</p>
+                    <a href="nethawk_privacy.html" class="btn btn-primary w-100 mt-auto">Política de Privacidade</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100 border-dashed" style="border: 2px dashed #ccc; background: transparent;">
-                <div class="card-body d-flex align-items-center justify-content-center">
-                    <p class="text-muted m-0">Novo App em breve...</p>
+        <!-- App 3: Em breve -->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card card-dashed h-100">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <div class="mb-3 p-3 rounded-circle" style="background-color: #f1f5f9;">
+                        <i class="bi bi-shield-check text-muted" style="font-size: 2rem;"></i>
+                    </div>
+                    <h5 class="card-title text-muted">Novo App</h5>
+                    <p class="text-muted m-0">Em desenvolvimento...</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <hr class="my-5">
+    <hr class="my-4" style="border-color: #cbd5e1;">
 
-    <div class="row">
+    <div class="row mb-5 mt-5">
         <div class="col-12 text-center">
-            <h5>Recursos do Desenvolvedor</h5>
-            <div class="d-flex justify-content-center gap-4 mt-3">
-                <a href="https://github.com/eng-matheusalb" class="resource-link">💻 GitHub</a>
-                <a href="mailto:prot3d.loja@gmail.com" class="resource-link">✉️ Contato</a>
+            <h5 class="fw-bold mb-4" style="color: var(--primary-dark);">Recursos do Desenvolvedor</h5>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://github.com/eng-matheusalb" class="resource-link">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="mailto:prot3d.loja@gmail.com" class="resource-link">
+                    <i class="bi bi-envelope-fill"></i> Contato Oficial
+                </a>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="text-center py-5 text-muted">
+<footer class="text-center py-4" style="background-color: var(--primary-dark); color: #94a3b8; margin-top: auto;">
     <small>&copy; 2026 Prot3D. Todos os direitos reservados.</small>
 </footer>
 
